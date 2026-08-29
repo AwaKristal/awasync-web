@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awasync - Base de Datos de las Backrooms</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between p-4 sm:p-8">
+
+  <!-- Encabezado / Branding -->
+  <header class="max-w-4xl mx-auto w-full text-center mt-6">
+    <div class="flex flex-col items-center justify-center gap-4 mb-4">
+      <img src="https://i.postimg.cc/kgvjJ05q/Awasync.jpg" alt="Awasync Logo" class="w-24 h-24 rounded-2xl border-2 border-slate-700 shadow-xl object-cover bg-slate-800 cursor-pointer transition hover:scale-105" onclick="showTab('home')">
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-slate-100 cursor-pointer" onclick="showTab('home')">
+        AWA<span class="text-purple-500">SYNC</span>
+      </h1>
+      <p class="text-xs font-semibold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">
+        Creado por AwaKristal
+      </p>
+    </div>
+  </header>
+
+  <!-- ================= SECCIÓN PRINCIPAL (HOME) ================= -->
+  <main id="tab-home" class="max-w-4xl mx-auto w-full my-6 space-y-8">
+    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto text-center">
+      Simulador interactivo de base de datos de los Backrooms para Discord. Explora información relevante, niveles misteriosos y pasa el rato.
+    </p>
+
+    <!-- Datos Rápidos -->
+    <div class="flex flex-wrap justify-center gap-3 text-xs sm:text-sm font-mono">
+      <span class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300">
+        Prefijo: <strong class="text-purple-400">Awasync</strong>
+      </span>
+      <span class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300">
+        Comandos: <strong class="text-purple-400">Awasync help</strong>
+      </span>
+    </div>
+
+    <!-- ¿Qué es Awasync? -->
+    <section class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-purple-400 mb-2 flex items-center gap-2">
+        <span>❓</span> ¿Qué es Awasync?
+      </h2>
+      <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+        Awasync es un bot de Discord desarrollado por <strong>AwaKristal</strong> que simula una base de datos de los Backrooms. Su función es puramente interactiva para pasar el rato, además de tener información relevante e interesante sobre los diversos niveles y anomalías.
+      </p>
+    </section>
+
+    <!-- Novedades de la Update 2.7 -->
+    <section class="bg-slate-900 border border-purple-500/30 rounded-2xl overflow-hidden shadow-xl">
+      <div class="bg-purple-900/30 border-b border-purple-500/20 p-4 sm:p-6 flex justify-between items-center flex-wrap gap-2">
+        <h2 class="text-lg sm:text-xl font-bold text-purple-200 flex items-center gap-2">
+          <span>🛠️</span> Update 2.7 de Awasync 📢
+        </h2>
+        <span class="text-xs font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-full">
+          01-08-2026
+        </span>
+      </div>
+
+      <div class="p-6 space-y-4 text-sm sm:text-base text-slate-300">
+        <p class="italic text-purple-300/80 border-l-2 border-purple-500 pl-3">
+          "Bienvenidos a La Casa, Ludopatas."
+        </p>
+
+        <h3 class="font-bold text-slate-100 text-base mt-4">Novedades:</h3>
+        <ul class="list-disc list-inside space-y-2 text-slate-300 pl-2">
+          <li>5 niveles salvajes han aparecido</li>
+          <li>
+            <code class="text-purple-300 bg-purple-950/60 border border-purple-800/50 px-1.5 py-0.5 rounded text-xs font-mono">Awasync guess</code>, 
+            <code class="text-purple-300 bg-purple-950/60 border border-purple-800/50 px-1.5 py-0.5 rounded text-xs font-mono">daily</code>, 
+            <code class="text-purple-300 bg-purple-950/60 border border-purple-800/50 px-1.5 py-0.5 rounded text-xs font-mono">roulette</code> y 
+            <code class="text-purple-300 bg-purple-950/60 border border-purple-800/50 px-1.5 py-0.5 rounded text-xs font-mono">lottery</code>
+          </li>
+          <li>Actualizacion de la web</li>
+          <li>
+            tmb <code class="text-purple-300 bg-purple-950/60 border border-purple-800/50 px-1.5 py-0.5 rounded text-xs font-mono">Awasync nitro</code>
+          </li>
+        </ul>
+
+        <!-- Imagen Destacada de la Update -->
+        <div class="mt-6 rounded-xl overflow-hidden border border-purple-500/20 bg-slate-950">
+          <img src="https://i.postimg.cc/2jJsd6hh/Dark-Suburs.jpg" alt="Level 9 - Dark Suburbs" class="w-full h-48 sm:h-64 object-cover">
+          <div class="bg-slate-950 p-2.5 text-xs text-purple-300/70 text-center border-t border-purple-500/20 font-mono">
+            Imagen de portada viene del Level 9 - Dark Suburs
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botones de Acción -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+      <a href="https://discord.com/oauth2/authorize?client_id=1513384220414836766&scope=bot%20applications.commands&permissions=8" target="_blank" class="w-full sm:w-auto text-center bg-purple-600 hover:bg-purple-500 text-white font-bold py-3.5 px-8 rounded-xl transition shadow-lg shadow-purple-900/30 flex items-center justify-center gap-2">
+        <span>🤖</span> Añadir Awasync a Discord
+      </a>
+      <a href="https://discord.ly/4bsa6pyxyojtog0hcdkgog0hqcseg0hg0gmqa4bseypwgyarjtoqcseg0m8mq4bsb4bsc4bsb4bsh" target="_blank" class="w-full sm:w-auto text-center bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold py-3.5 px-8 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+        <span>🗳️</span> Votar por Awasync
+      </a>
+    </div>
+  </main>
+
+  <!-- ================= SECCIÓN DATABASE ================= -->
+  <main id="tab-database" class="hidden max-w-4xl mx-auto w-full my-6 space-y-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+      <button onclick="showTab('home')" class="text-xs text-purple-400 hover:underline mb-4 inline-block">← Volver al inicio</button>
+      
+      <!-- Encabezado de Paginación y Buscador -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-4 mb-6 gap-4">
+        <div>
+          <h2 id="db-page-title" class="text-2xl font-bold text-slate-100">Pagina 1</h2>
+          <p class="text-xs text-slate-400 mt-1">Elige una pagina (1-17)</p>
+        </div>
+
+        <!-- Buscador pequeño -->
+        <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 rounded-xl p-1.5 pl-3">
+          <span class="text-slate-400 text-sm">🔍</span>
+          <input id="page-input" type="number" min="1" max="17" placeholder="Pág..." class="bg-transparent text-slate-100 text-sm w-16 focus:outline-none">
+          <button onclick="goToPageInput()" class="bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded-lg transition font-semibold">Ir</button>
+        </div>
+      </div>
+
+      <!-- Lista de Niveles -->
+      <div id="levels-container" class="space-y-4">
+        <!-- Se genera dinámicamente vía JavaScript -->
+      </div>
+
+      <!-- Navegación de Páginas -->
+      <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-800 text-xs sm:text-sm">
+        <button id="btn-prev" onclick="changePage(-1)" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+          ← Anterior
+        </button>
+        <span id="page-indicator" class="text-slate-400 font-mono">Página 1 de 17</span>
+        <button id="btn-next" onclick="changePage(1)" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+          Siguiente →
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= SECCIÓN LORE ================= -->
+  <main id="tab-lore" class="hidden max-w-4xl mx-auto w-full my-6 space-y-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+      <button onclick="showTab('home')" class="text-xs text-purple-400 hover:underline mb-4 inline-block">← Volver al inicio</button>
+      <h2 class="text-2xl font-bold text-slate-100 mb-4 border-b border-slate-800 pb-3 flex items-center gap-2">
+        <span>🔆</span> Lore de Awasync
+      </h2>
+      
+      <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p class="italic text-slate-400 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+          El lore está basado en los 2 principales: <strong class="text-purple-400">Async</strong> y <strong class="text-purple-400">M.E.G.</strong>
+        </p>
+
+        <!-- Cronología -->
+        <div class="relative pl-6 border-l-2 border-purple-500/40 space-y-6 my-4">
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1.5 w-3 h-3 bg-purple-500 rounded-full border-2 border-slate-900"></div>
+            <h3 class="text-purple-400 font-bold text-base sm:text-lg">4 de Agosto 2010</h3>
+            <p class="text-slate-300 mt-1">Primera aparición registrada. La primera persona entra accidentalmente a los niveles y cae desde una altura mortal.</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1.5 w-3 h-3 bg-purple-500 rounded-full border-2 border-slate-900"></div>
+            <h3 class="text-purple-400 font-bold text-base sm:text-lg">6 de Agosto de 2010</h3>
+            <p class="text-slate-300 mt-1">La cinta de video grabada fue recuperada e investigada exhaustivamente para estabilizar la distorsión dimensional y crear un portal de entrada seguro.</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1.5 w-3 h-3 bg-purple-500 rounded-full border-2 border-slate-900"></div>
+            <h3 class="text-purple-400 font-bold text-base sm:text-lg">20 de Septiembre de 2010</h3>
+            <p class="text-slate-300 mt-1">El portal dimensional logra funcionar correctamente, desplegando el sistema informático <strong class="text-purple-400">Awasync</strong> para mapear y catalogar la base de datos de los Backrooms en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= SECCIÓN TOS ================= -->
+  <main id="tab-tos" class="hidden max-w-4xl mx-auto w-full my-6 space-y-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+      <button onclick="showTab('home')" class="text-xs text-purple-400 hover:underline mb-4 inline-block">← Volver al inicio</button>
+      <h2 class="text-2xl font-bold text-slate-100 mb-4 border-b border-slate-800 pb-2">Términos de Servicio (TOS)</h2>
+      <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p>Al utilizar el bot <strong>Awasync</strong> en tu servidor de Discord o acceder a esta plataforma, aceptas los siguientes términos:</p>
+        <ul class="list-disc list-inside space-y-2 pl-2 text-slate-400">
+          <li><strong>Uso permitido:</strong> Awasync es un bot de entretenimiento y simulación. Queda prohibido el uso del bot para spam, explotación de errores de economía o automatización no autorizada.</li>
+          <li><strong>Moneda Virtual:</strong> Los créditos y estadísticas obtenidas en los juegos virtuales no tienen valor monetario real.</li>
+          <li><strong>Disponibilidad:</strong> El servicio se provee "tal cual" y puede sufrir interrupciones por mantenimiento o actualizaciones.</li>
+          <li><strong>Responsabilidad:</strong> El creador (AwaKristal) no se hace responsable por el mal uso del bot dentro de los servidores.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= SECCIÓN PRIVACIDAD ================= -->
+  <main id="tab-privacy" class="hidden max-w-4xl mx-auto w-full my-6 space-y-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+      <button onclick="showTab('home')" class="text-xs text-purple-400 hover:underline mb-4 inline-block">← Volver al inicio</button>
+      <h2 class="text-2xl font-bold text-slate-100 mb-4 border-b border-slate-800 pb-2">Política de Privacidad</h2>
+      <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p>En <strong>Awasync</strong> garantizamos la protección de tus datos dentro de la plataforma de Discord:</p>
+        <ul class="list-disc list-inside space-y-2 pl-2 text-slate-400">
+          <li><strong>Datos recolectados:</strong> Únicamente almacenamos tu ID de usuario y ID del servidor para vincular el progreso de economía e inventarios.</li>
+          <li><strong>Uso de la información:</strong> Los datos no se comparten, venden ni transfieren a terceros.</li>
+          <li><strong>Eliminación de datos:</strong> Si deseas eliminar tus registros guardados, puedes solicitarlo directamente en el servidor oficial de soporte o con el desarrollador.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="max-w-4xl mx-auto w-full text-center text-xs text-slate-400 border-t border-slate-800 pt-6 mt-10 space-y-3">
+    <div class="flex flex-wrap justify-center items-center gap-3 py-2">
+      <button onclick="showTab('home')" class="bg-slate-900 border border-slate-800 hover:border-purple-500 text-slate-300 px-3 py-1.5 rounded-lg font-medium transition">Inicio</button>
+      <button onclick="showTab('database')" class="bg-slate-900 border border-slate-800 hover:border-purple-500 text-purple-400 px-3 py-1.5 rounded-lg font-medium transition flex items-center gap-1.5">
+        <span>🗂️</span> Database
+      </button>
+      <button onclick="showTab('lore')" class="bg-slate-900 border border-slate-800 hover:border-purple-500 text-purple-400 px-3 py-1.5 rounded-lg font-medium transition flex items-center gap-1.5">
+        <span>🔆</span> Lore
+      </button>
+      <button onclick="showTab('tos')" class="bg-slate-900 border border-slate-800 hover:border-purple-500 text-purple-400 px-3 py-1.5 rounded-lg font-medium transition">Términos de Servicio</button>
+      <button onclick="showTab('privacy')" class="bg-slate-900 border border-slate-800 hover:border-purple-500 text-purple-400 px-3 py-1.5 rounded-lg font-medium transition">Política de Privacidad</button>
+    </div>
+    <p class="text-slate-500 mt-2">© 2026 Awasync Bot. Creado por <strong class="text-slate-300">AwaKristal</strong>. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Lógica e Integración de Datos (85 Niveles -> 17 Páginas) -->
+  <script>
+    const levelsData = [
+      { id: 1, name: "Level 0 - The Lobby", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/3wP9nYSc/The-Lobby.jpg" },
+      { id: 2, name: "Level 1 - Habitable Zone", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/YSjydXpq/Habitable-Zone.jpg" },
+      { id: 3, name: "Level 94 - Motion", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/GpZzqd7X/Motion.jpg" },
+      { id: 4, name: "Level !!! - Run For Your Life!", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/bvKL3pCV/Run-For-Your-Life.jpg" },
+      { id: 5, name: "Level 67 - Forgotten Harbor", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/1zLMJsCJ/Forgotten-Harbor.jpg" },
+      { id: 6, name: "Level ∞ - The Liminal Airport", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/yxrDyYjr/The-Liminal-Airport.webp" },
+      { id: 7, name: "Level 2 - Pipe Dreams", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/nzFM8QPj/Pipe-Dreams.jpg" },
+      { id: 8, name: "Level => - Fun", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/tJmsNCkM/Fun.jpg" },
+      { id: 9, name: "Level 47 - Interrogative Infohazard", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/Wz4DZJmP/Interrogative-Infohazard.webp" },
+      { id: 10, name: "Level 41 - The Greed of Man knows No Limit", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/5ytHzF5V/The-Greed-of-Man-Knows-No-Limit.jpg" },
+      { id: 11, name: "Level 974 - Kitty's House", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/htCKJ3yf/Kitty-House.jpg" },
+      { id: 12, name: "Level 18 - Nostalgia Memories", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/7LfwSMdq/Nostalgia-Memories.png" },
+      { id: 13, name: "Level 37 - Poolrooms", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/rwHv26ZM/Poolrooms.png" },
+      { id: 14, name: "Level 154 - The Neon Express", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/W4BLgR09/The-Neon-Express.png" },
+      { id: 15, name: "Level 666 - Path to Hell", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/mrtB7NJ4/Path-to-Hell.png" },
+      { id: 16, name: "Level 3 - The Electrical Station", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/25DkT1YH/The-Electrical-Station.webp" },
+      { id: 17, name: "Level 274 - Jerry's Room", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/k5mJw2Cv/Jerry-Room.jpg" },
+      { id: 18, name: "Level 5 - Terror Hotel", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/MGS6tnw5/Terror-Hotel.jpg" },
+      { id: 19, name: "Level 881 - The Courtyard", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/KY2GQ1bQ/The-Courtyard.jpg" },
+      { id: 20, name: "Level 999 - Island of the Void", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/JhLrKs8c/Island-Of-The-Void.jpg" },
+      { id: 21, name: "Level 58 - Unstable Conditions", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/c4S1WD6v/Unstable-Conditions.jpg" },
+      { id: 22, name: "Level 28 - Final Virtue", class: "Clase 2 - Riesgo Riesgo", image: "https://i.postimg.cc/HnJYLKXc/Final-Virtue.jpg" },
+      { id: 23, name: "Level 24 - The Moon", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/C5ZhKtkq/The-Moon.jpg" },
+      { id: 24, name: "Level 4 - The Abandoned Office", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/QCB8MP1K/The-Abandoned-Office.jpg" },
+      { id: 25, name: "Level 6 - Lights Out", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/MHc6G4Vj/Lights-Out.jpg" },
+      { id: 26, name: "Level 3008 - Morning Area", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/KjKGYVBt/Morning-Area.webp" },
+      { id: 27, name: "Level 51 - Olympus Caverns", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/gkMgP2KX/Olympus-Caverns.jpg" },
+      { id: 28, name: "Level 155 - The Evolution", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/c4DFNLc3/The-Evolution.webp" },
+      { id: 29, name: "Level 131 - Televised Horror", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/3JLtHxZ0/Televised-Horror.jpg" },
+      { id: 30, name: "Level 77 - The Underground Train", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/wTWwdjkm/The-Underground-Train.jpg" },
+      { id: 31, name: "Level 162 - The Concrete Wall", class: "Clase 0 - Seguro", image: "https://i.postimg.cc/3Rw3wZqs/Numbered-Doors.png" },
+      { id: 32, name: "Level 502 - Soul Servers", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/sX232J8d/Soul-Servers.png" },
+      { id: 33, name: "Level 13 - The Infinite Apartments", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/SsKmKGPw/The-Infinite-Apartments.png" },
+      { id: 34, name: "Level 143 - Zinc Oxide", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/hjGKG0wF/Zinc-Oxide.png" },
+      { id: 35, name: "Level 21 - Numbered Doors", class: "Clase 0 - Seguro", image: "https://i.postimg.cc/3Rw3wZqs/Numbered-Doors.png" },
+      { id: 36, name: "Level 121 - The Fading Islands", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/YqkzSrB5/The_Fading_Islands.png" },
+      { id: 37, name: "Level 90 - Eternal Rain", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/5N1St4WK/Eternal_Rain.png" },
+      { id: 38, name: "Level 40 - Roller Rockin' Pizza", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/FsmVKrXq/Roller_Rockin_Pizza.png" },
+      { id: 39, name: "Level 797 - Alpine Village", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/MKxmG6JP/Alpine_Village.png" },
+      { id: 40, name: "Level 563 - The Divine Arcade", class: "Clase 0 - Seguro", image: "https://i.postimg.cc/fTZfbzQH/The_Divine_Arcade.png" },
+      { id: 41, name: "Level -299 - Vertical Office", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/Hn3qhSCQ/Vertical-Office.png" },
+      { id: 42, name: "Level 324 - Cryophobic Hell", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/FzGMBPQf/Cryophobic-Hell.png" },
+      { id: 43, name: "Level 45 - Abyss Inc.", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/PJKgR6kv/Abyss-Inc.png" },
+      { id: 44, name: "Level 54 - Stairwell Of Spirals", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/C5J3QvVf/Stairwell-of-Spirals.png" },
+      { id: 45, name: "Level 752 - Snowy Road 752", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/WzSBH9PZ/Snowy-Road-752.png" },
+      { id: 46, name: "Level 234 - Detention Dimension", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/6pwXpGMh/Detention-Dimension.png" },
+      { id: 47, name: "Level 63 - Tranquility", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/HkHgk76M/Tranquility.png" },
+      { id: 48, name: "Level 996 - The Horizon Ascent", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/kgcd6XHt/The-Horizon-Ascent.png" },
+      { id: 49, name: "Level 76 - After Dark", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/2SmDSB0q/After-Dark.png" },
+      { id: 50, name: "Level 34 - Sewer System", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/Bns0n1mT/Sewer-System.png" },
+      { id: 51, name: "Level 335 - Wake Up", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/tgWWtwhD/Wake-Up.png" },
+      { id: 52, name: "Level 125 - Desolate Holiday", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/CKkkHXjk/Desolate-Holiday.png" },
+      { id: 53, name: "Level 283 - PlayLand", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/BvHHckxc/Play-Land.png" },
+      { id: 54, name: "Level 176 - The Courts", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/fbmmjpx7/The-Courts.png" },
+      { id: 55, name: "Level 98 - Downtown Diner", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/g088qQvv/Downtown-Diner.png" },
+      { id: 56, name: "Level 931 - The Grassrooms", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/Hx0NKSCF/The-Grassrooms.png" },
+      { id: 57, name: "Level 435 - Cramped Passageways", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/wv5rPWdV/Cramped-Passageways.png" },
+      { id: 58, name: "Level 459 - Your level has committed sudicide", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/W3myK9PS/Your-level-has-committed-sudicide.png" },
+      { id: 59, name: "Level 768 - What even is this freaking Halloween!?", class: "Clase Deadzone - Peligro Crítico", image: "https://i.postimg.cc/C1C2tvV4/What-even-is-this-freaking-Halloween.png" },
+      { id: 60, name: "Level 402 - Plastic City", class: "Clase 2 - Riesgo Medio", image: "https://i.postimg.cc/QtgzP6rR/Plastic-City.png" },
+      { id: 61, name: "Level 148 - The Living Level", class: "Clase 5b - Ambiental", image: "https://i.postimg.cc/SRC6QKrD/The-Living-Level.png" },
+      { id: 62, name: "Level 683 - The Haunted 1LDK", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/qqysB7L8/The-Haunted-1LDK.jpg" },
+      { id: 63, name: "Level 191 - RUN-AND-GUN.EXE", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/8cMRkCHd/RUN-AND-GUN-EXE.jpg" },
+      { id: 64, name: "Level 592 - Online Exam Day!", class: "Clase Indeterminada", image: "https://i.postimg.cc/D0Lrfzgr/Online-Exam-Day.jpg" },
+      { id: 65, name: "Level 9223372036854775807 - An Endless Ending", class: "Clase Indeterminada", image: "https://i.postimg.cc/kGKQM5cc/An-Endless-Ending.webp" },
+      { id: 66, name: "Level 641 - TORNADO OUTBREAK", class: "Clase 6e - Ambiental", image: "https://i.postimg.cc/HsjmN76V/TORNADO-OUTBREAK.jpg" },
+      { id: 67, name: "Level 562 - Asbestos Vents", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/ZK0mQywW/Asbestos-Vents.jpg" },
+      { id: 68, name: "Level 610 - The Snackrooms", class: "Clase 3e - Ambiental", image: "https://i.postimg.cc/TYhxsWtL/The-Snackrooms.jpg" },
+      { id: 69, name: "Level 102 - Freshwater Abyss", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/xTqQZb6k/Freshwater-Abyss.jpg" },
+      { id: 70, name: "Level 172 - Memorium", class: "Clase Iota - Anómalo", image: "https://i.postimg.cc/tC7bcVBn/Memorium.jpg" },
+      { id: 71, name: "Level 1888 - Apeirophobia", class: "Clase ∞ - Infinito", image: "https://i.postimg.cc/2jVggC0z/Apeirophobia.webp" },
+      { id: 72, name: "Level 188.8 - The Flooded Courtyard", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/kGxqpYXm/The-Flooded-Courtyard.jpg" },
+      { id: 73, name: "Level 777 - True Scopophobia", class: "Clase Indeterminada", image: "https://i.postimg.cc/90GCngF2/Scopophobia.jpg" },
+      { id: 74, name: "Level -777 - The House Always Wins", class: "Clase 4e - Ambiental", image: "https://i.postimg.cc/MHyqF3KH/The-House-Always-Wins.webp" },
+      { id: 75, name: "Level !-! - Hotel Chase", class: "Clase Variable", image: "https://i.postimg.cc/d38wxNts/Hotel-Chase.jpg" },
+      { id: 76, name: "Level 3999 - The True Final Eternal Neon Paradise", class: "Clase 0 - Seguro", image: "https://i.postimg.cc/d1mWn4Mw/The-True-Final-Eternal-Neon-Paradise.webp" },
+      { id: 77, name: "Level The Promised Land", class: "Clase 0 - Seguro", image: "https://i.postimg.cc/MTbstdkk/The-Promised-Land.jpg" },
+      { id: 78, name: "Level 99 - Anemoia", class: "Clase Mu - Inestable / Desconocido", image: "https://i.postimg.cc/RFQPGXrx/Anemoia.jpg" },
+      { id: 79, name: "Level 37.2 - Dark Poolrooms", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/rmChggBB/Dark-Poolrooms.jpg" },
+      { id: 80, name: "Level 941 - Holiday Spirit", class: "Clase 1e - Ambiental", image: "https://i.postimg.cc/Hx4S3BGH/Holiday-Spirit.webp" },
+      
+      /* PAGINA 17 - NIVELES EXACTOS DEL BOT (81-85) */
+      { id: 81, name: "Level 10 - Bumper Crop", class: "Clase 0 - Seguro / Habitable", image: "https://i.postimg.cc/RC8k1FK1/Bumper-Crop.jpg" },
+      { id: 82, name: "Level 7 - Thalassophobia", class: "Clase 4 - Muy Peligroso", image: "https://i.postimg.cc/dQXbR1rG/Thalassophobia.jpg" },
+      { id: 83, name: "Level 8 - Cave System", class: "Clase 3 - Peligroso", image: "https://i.postimg.cc/WpKBm3gG/Cave-Systems.jpg" },
+      { id: 84, name: "Level 0.2 - Remodeled Mess", class: "Clase 1 - Bajo Riesgo", image: "https://i.postimg.cc/QNP2gt1p/Remodeled-Mess.jpg" },
+      { id: 85, name: "Level 9 - Dark Suburbs", class: "Clase 5 - Extremo", image: "https://i.postimg.cc/2jJsd6hh/Dark-Suburs.jpg" }
+    ];
+
+    let currentPage = 1;
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(levelsData.length / itemsPerPage);
+
+    function renderDatabase() {
+      const container = document.getElementById('levels-container');
+      container.innerHTML = '';
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const currentLevels = levelsData.slice(startIndex, endIndex);
+
+      currentLevels.forEach(level => {
+        const card = document.createElement('div');
+        card.className = "flex flex-col sm:flex-row items-center gap-4 bg-slate-950 border border-slate-800 p-4 rounded-xl shadow-md hover:border-slate-700 transition";
+        card.innerHTML = `
+          <img src="${level.image}" alt="${level.name}" class="w-full sm:w-28 h-20 object-cover rounded-lg border border-slate-800 bg-slate-900">
+          <div class="flex-1 text-center sm:text-left">
+            <h3 class="font-bold text-slate-100 text-base">${level.name}</h3>
+            <p class="text-xs text-purple-400 mt-1 font-mono">${level.class}</p>
+            <span class="inline-block mt-2 text-[10px] bg-slate-800 border border-slate-700 text-slate-400 px-2 py-0.5 rounded font-mono">ID: ${level.id}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('db-page-title').innerText = `Pagina ${currentPage}`;
+      document.getElementById('page-indicator').innerText = `Página ${currentPage} de ${totalPages}`;
+      document.getElementById('btn-prev').disabled = currentPage === 1;
+      document.getElementById('btn-next').disabled = currentPage === totalPages;
+    }
+
+    function changePage(direction) {
+      const newPage = currentPage + direction;
+      if (newPage >= 1 && newPage <= totalPages) {
+        currentPage = newPage;
+        renderDatabase();
+      }
+    }
+
+    function goToPageInput() {
+      const input = document.getElementById('page-input');
+      const val = parseInt(input.value);
+      if (val >= 1 && val <= totalPages) {
+        currentPage = val;
+        renderDatabase();
+        input.value = '';
+      }
+    }
+
+    function showTab(tabName) {
+      document.getElementById('tab-home').classList.add('hidden');
+      document.getElementById('tab-database').classList.add('hidden');
+      document.getElementById('tab-lore').classList.add('hidden');
+      document.getElementById('tab-tos').classList.add('hidden');
+      document.getElementById('tab-privacy').classList.add('hidden');
+
+      document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+      if (tabName === 'database') {
+        renderDatabase();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
